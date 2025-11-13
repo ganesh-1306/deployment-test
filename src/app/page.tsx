@@ -9,6 +9,7 @@ export default function Home() {
   const navLinks = [
     { label: "Home", href: "#home" },
     { label: "Services", href: "#services" },
+    { label: "Projects", href: "#projects" },
     { label: "About", href: "#about" },
     { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "#contact" },
@@ -29,6 +30,27 @@ export default function Home() {
       title: "24/7 Support",
       description:
         "Partner with an on-call team that keeps your applications running at peak health.",
+    },
+  ];
+
+  const projects = [
+    {
+      name: "Velocity Launchpad",
+      summary:
+        "Implemented zero-downtime releases across five regions, shrinking deploy windows from 45 to 8 minutes.",
+      metrics: "48% faster releases",
+    },
+    {
+      name: "Atlas Observability",
+      summary:
+        "Unified logging, tracing, and alerting with a streaming pipeline that surfaces incidents in under a minute.",
+      metrics: "60% fewer critical incidents",
+    },
+    {
+      name: "Aurora Commerce",
+      summary:
+        "Migrated a legacy monolith to containerized services backed by automated canary rollouts and rollbacks.",
+      metrics: "99.99% availability sustained",
     },
   ];
 
@@ -61,6 +83,20 @@ export default function Home() {
             <Link href="#about" className={styles.secondaryAction}>
               Learn More
             </Link>
+          </div>
+        </section>
+        <section id="projects" className={styles.section}>
+          <h2>Projects we’ve delivered</h2>
+          <div className={styles.projectGrid}>
+            {projects.map((project) => (
+              <article key={project.name} className={styles.projectCard}>
+                <header>
+                  <h3>{project.name}</h3>
+                  <span>{project.metrics}</span>
+                </header>
+                <p>{project.summary}</p>
+              </article>
+            ))}
           </div>
         </section>
         <section id="services" className={styles.section}>
