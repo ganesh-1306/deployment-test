@@ -142,13 +142,54 @@ export default function Home() {
             Tell us about your roadmap and we will design a deployment strategy
             tailored to your product.
           </p>
-          <Link
-            href={contactHref}
-            className={styles.primaryAction}
-            aria-disabled={!contactEmail}
+          <form
+            className={styles.contactForm}
+            action={contactHref}
+            method="post"
           >
-            Contact Us
-          </Link>
+            <div className={styles.formRow}>
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Jane Doe"
+                required
+              />
+            </div>
+            <div className={styles.formRow}>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+            <div className={`${styles.formRow} ${styles.fullWidth}`}>
+              <label htmlFor="message">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Share your goals, timelines, and any context your team has in mind."
+                rows={5}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className={styles.primaryAction}
+              disabled={!contactEmail}
+            >
+              Send Message
+            </button>
+            {!contactEmail && (
+              <p className={styles.formHelper}>
+                Add <code>NEXT_PUBLIC_CONTACT_EMAIL</code> to enable submissions.
+              </p>
+            )}
+          </form>
         </section>
       </main>
       <footer className={styles.footer}>
