@@ -161,6 +161,47 @@
   gap: 12px;
 }
 
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.projectCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.07);
+}
+
+.projectCard header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.projectCard h3 {
+  font-size: 22px;
+}
+
+.projectCard span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.projectCard p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .card h3 {
   font-size: 22px;
 }
