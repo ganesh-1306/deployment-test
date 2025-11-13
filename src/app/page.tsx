@@ -11,6 +11,7 @@ export default function Home() {
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
     { label: "About", href: "#about" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "#contact" },
   ];
 
