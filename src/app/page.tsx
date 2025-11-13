@@ -10,6 +10,7 @@ export default function Home() {
     { label: "Home", href: "#home" },
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "#contact" },
   ];
 
